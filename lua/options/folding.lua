@@ -1,0 +1,14 @@
+vim.opt.foldenable = false -- unset to display all folds open
+-- vim.opt.foldlevel = false	-- folds with a level higher than this number will be closed
+-- vim.opt.foldlevelstart = false	-- value for 'foldlevel' when starting to edit a file
+-- vim.opt.foldcolumn = false	-- width of the column used to indicate folds
+-- vim.opt.foldtext = false	-- expression used to display the text of a closed fold
+-- vim.opt.foldclose = false	-- set to "all" to close a fold when the cursor leaves it
+-- vim.opt.foldopen = false	-- specifies for which commands a fold will be opened
+-- vim.opt.foldminlines = false	-- minimum number of screen lines for a fold to be closed
+-- vim.opt.commentstring = false	-- template for comments; used to put the marker in
+vim.opt.foldmethod = 'expr' -- folding type: "manual", "indent", "expr", "marker",
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()' -- expression used when 'foldmethod' is "expr"
+-- vim.opt.foldignore = false	-- used to ignore lines when 'foldmethod' is "indent"
+-- vim.opt.foldmarker = false	-- markers used when 'foldmethod' is "marker"
+-- vim.opt.foldnestmax = false	-- maximum fold depth for when 'foldmethod' is "indent" or "syntax"

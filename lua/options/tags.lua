@@ -1,0 +1,15 @@
+-- vim.opt.tagbsearch = false	-- use binary searching in tags files
+-- vim.opt.taglength = false	-- number of significant characters in a tag name or zero
+-- vim.opt.tags = false	-- list of file names to search for tags
+-- vim.opt.tagcase = false	-- how to handle case when searching in tags files:
+-- vim.opt.tagrelative = false	-- file names in a tags file are relative to the tags file
+-- vim.opt.tagstack = false	-- a :tag command will use the tagstack
+-- vim.opt.showfulltag = false	-- when completing tags in Insert mode show more info
+-- vim.opt.tagfunc = false	-- a function to be used to perform tag searches
+-- vim.opt.cscopeprg = false	-- command for executing cscope
+-- vim.opt.cscopetag = false	-- use cscope for tag commands
+-- vim.opt.cscopetagorder = false	-- 0 or 1; the order in which ":cstag" performs a search
+-- vim.opt.cscopeverbose = false	-- give messages when adding a cscope database
+-- vim.opt.cscopepathcomp = false	-- how many components of the path to show
+-- vim.opt.cscopequickfix = false	-- when to open a quickfix window for cscope
+-- vim.opt.cscoperelative = false	-- file names in a cscope file are relative to that file

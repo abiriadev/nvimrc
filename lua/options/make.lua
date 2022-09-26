@@ -1,0 +1,8 @@
+-- vim.opt.errorfile = false	-- name of the file that contains error messages
+-- vim.opt.errorformat = false	-- list of formats for error messages
+-- vim.opt.makeprg = false	-- program used for the ":make" command
+-- vim.opt.shellpipe = false	-- string used to put the output of ":make" in the error file
+-- vim.opt.makeef = false	-- name of the errorfile for the 'makeprg' command
+-- vim.opt.grepprg = false	-- program used for the ":grep" command
+-- vim.opt.grepformat = false	-- list of formats for output of 'grepprg'
+-- vim.opt.makeencoding = false	-- encoding of the ":make" and ":grep" output

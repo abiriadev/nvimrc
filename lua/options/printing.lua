@@ -1,0 +1,8 @@
+-- vim.opt.printoptions = false	-- list of items that control the format of :hardcopy output
+-- vim.opt.printdevice = false	-- name of the printer to be used for :hardcopy
+-- vim.opt.printexpr = false	-- expression used to print the PostScript file for :hardcopy
+-- vim.opt.printfont = false	-- name of the font to be used for :hardcopy
+-- vim.opt.printheader = false	-- format of the header used for :hardcopy
+-- vim.opt.printencoding = false	-- encoding used to print the PostScript file for :hardcopy
+-- vim.opt.printmbcharset = false	-- the CJK character set to be used for CJK output from :hardcopy
+-- vim.opt.printmbfont = false	-- list of font names to be used for CJK output from :hardcopy

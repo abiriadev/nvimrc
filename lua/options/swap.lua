@@ -1,0 +1,4 @@
+-- vim.opt.directory = false	-- list of directories for the swap file
+-- vim.opt.swapfile = false	-- use a swap file for this buffer
+-- vim.opt.updatecount = false	-- number of characters typed to cause a swap file update
+-- vim.opt.updatetime = false	-- time in msec after which the swap file will be updated

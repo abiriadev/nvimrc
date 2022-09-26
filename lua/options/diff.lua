@@ -1,0 +1,4 @@
+-- vim.opt.diff = false	-- use diff mode for the current window
+-- vim.opt.diffopt = false	-- options for using diff mode
+-- vim.opt.diffexpr = false	-- expression used to obtain a diff file
+-- vim.opt.patchexpr = false	-- expression used to patch a file

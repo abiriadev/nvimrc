@@ -1,0 +1,11 @@
+-- vim.opt.shell = false	-- name of the shell program used for external commands
+-- vim.opt.shellquote = false	-- character(s) to enclose a shell command in
+-- vim.opt.shellxquote = false	-- like 'shellquote' but include the redirection
+-- vim.opt.shellxescape = false	-- characters to escape when 'shellxquote' is (
+-- vim.opt.shellcmdflag = false	-- argument for 'shell' to execute a command
+-- vim.opt.shellredir = false	-- used to redirect command output to a file
+-- vim.opt.shelltemp = false	-- use a temp file for shell commands instead of using a pipe
+-- vim.opt.equalprg = false	-- program used for "=" command
+-- vim.opt.formatprg = false	-- program used to format lines with "gq" command
+-- vim.opt.keywordprg = false	-- program used for the "K" command
+-- vim.opt.warn = false	-- warn when using a shell command and a buffer has changes

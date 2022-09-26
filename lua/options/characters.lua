@@ -1,0 +1,8 @@
+-- vim.opt.encoding = 'utf-8'	-- character encoding used in Nvim: "utf-8"
+-- vim.opt.fileencoding = false	-- character encoding for the current file
+-- vim.opt.fileencodings = false	-- automatically detected character encodings
+-- vim.opt.charconvert = false	-- expression used for character encoding conversion
+-- vim.opt.delcombine = false	-- delete combining (composing) characters on their own
+-- vim.opt.maxcombine = false	-- maximum number of combining (composing) characters displayed
+-- vim.opt.ambiwidth = false	-- width of ambiguous width characters
+-- vim.opt.emoji = false	-- emoji characters are full width

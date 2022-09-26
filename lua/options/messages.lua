@@ -1,0 +1,15 @@
+-- vim.opt.terse = false	-- add 's' flag in 'shortmess' (don't show search message)
+-- vim.opt.shortmess = false	-- list of flags to make messages shorter
+-- vim.opt.showcmd = true	-- show (partial) command keys in the status line
+-- vim.opt.showmode = false	-- display the current mode in the status line
+-- vim.opt.ruler = false	-- show cursor position below each window
+-- vim.opt.rulerformat = false	-- alternate format to be used for the ruler
+-- vim.opt.report = false	-- threshold for reporting number of changed lines
+-- vim.opt.verbose = true	-- the higher the more messages are given
+-- vim.opt.verbosefile = false	-- file to write messages in
+-- vim.opt.more = false	-- pause listings when the screen is full
+-- vim.opt.confirm = true	-- start a dialog when a command fails
+-- vim.opt.errorbells = false	-- ring the bell for error messages
+vim.opt.visualbell = true	-- use a visual bell instead of beeping
+-- vim.opt.belloff = false	-- do not ring the bell for these reasons
+-- vim.opt.helplang = false	-- list of preferred languages for finding help
