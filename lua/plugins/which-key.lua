@@ -110,6 +110,12 @@ wk.register({
 	A = {
 		'Swap previous',
 	},
+	e = {
+		'Focus NvimTree'
+	},
+	E = {
+		'Toggle NvimTree'
+	}
 }, {
 	prefix = '<leader>',
 })

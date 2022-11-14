@@ -1,0 +1,9 @@
+/*
+!/.fdignore
+!/after
+!/.fdignore
+!/.git
+!/init.lua
+!/lua
+!/.nvimrc
+stylua.toml

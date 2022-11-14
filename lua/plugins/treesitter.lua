@@ -35,25 +35,15 @@ require('nvim-treesitter.configs').setup {
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = 'gnn',
-			node_incremental = 'grn',
-			scope_incremental = 'grc',
-			node_decremental = 'grm',
+			init_selection = '=',
+			node_incremental = '=',
+			scope_incremental = '=',
+			node_decremental = '-',
 		},
 	},
-	-- ensure_installed = { 'http', 'json' },
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
-		config = {
-			javascript = {
-				__default = '// %s',
-				comment = '// %s',
-				jsx_element = '// %s',
-				jsx_fragment = '// %s',
-				jsx_attribute = '// %s',
-			},
-		},
 	},
 	textobjects = {
 		select = {
@@ -72,6 +62,8 @@ require('nvim-treesitter.configs').setup {
 					query = '@class.inner',
 					desc = 'Select inner part of a class region',
 				},
+				['ab'] = '@block.inner',
+				['ib'] = '@block.outer',
 			},
 			-- You can choose the select mode (default is charwise 'v')
 			selection_modes = {
@@ -123,11 +115,7 @@ require('nvim-treesitter.configs').setup {
 	-- },
 }
 
-require('nvim-treesitter.highlight').set_custom_captures {
-	-- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-	['return_statement'] = 'Search',
-}
-
-function query()
-	return dlfja
-end
+-- require('nvim-treesitter.highlight').set_custom_captures {
+-- 	-- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+-- 	['return_statement'] = 'Search',
+-- }

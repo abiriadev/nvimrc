@@ -25,6 +25,7 @@ local commonFT = {
 	'xml',
 	'svg',
 	'svelte',
+	'sql'
 }
 
 for _, ft in ipairs(commonFT) do

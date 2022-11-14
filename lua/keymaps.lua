@@ -11,9 +11,10 @@ nest.applyKeymaps {
 		{
 			{
 				'<leader>',
-				function()
-					require('harpoon.ui').toggle_quick_menu()
-				end,
+				'<cmd>Telescope harpoon marks<CR>',
+				-- function()
+				-- 	require('harpoon.ui').toggle_quick_menu()
+				-- end,
 			},
 			{
 				'f',
@@ -59,12 +60,6 @@ nest.applyKeymaps {
 						function()
 							require('telescope.builtin').current_buffer_fuzzy_find()
 						end,
-					},
-					{
-						'h',
-						-- function ()
-						'<cmd>Telescope harpoon marks<CR>',
-						-- end
 					},
 					{
 						'H',
@@ -173,6 +168,11 @@ nest.applyKeymaps {
 				'm',
 				function()
 					require('harpoon.mark').add_file()
+					vim.notify(
+						'added buffer to harpoon!'
+							.. '\n'
+							.. vim.api.nvim_buf_get_name(0)
+					)
 				end,
 			},
 			{
@@ -189,6 +189,135 @@ nest.applyKeymaps {
 			{
 				'x',
 				'<cmd>TroubleToggle<CR>',
+			},
+			{
+				'e',
+				function()
+					---@diagnostic disable-next-line: unused-local
+					local tree =
+						require('nvim-tree.api').tree
+
+					if vim.bo.filetype == 'NvimTree' then
+						return '<C-w>p'
+					else
+						return '<cmd>NvimTreeFindFile<CR>'
+					end
+				end,
+				options = {
+					expr = true,
+				},
+			},
+			{
+				'<S-e>',
+				'<cmd>NvimTreeFindFileToggle<CR>',
+			},
+			{
+				'h',
+				function()
+					vim.lsp.buf.hover()
+				end,
+			},
+			{
+				'd',
+				function()
+					vim.lsp.buf.definition()
+				end,
+			},
+			{
+				'<S-d>',
+				function()
+					require('goto-preview').goto_preview_definition()
+				end,
+			},
+			{
+				'r',
+				function()
+					require('telescope.builtin').lsp_references()
+				end,
+			},
+			{
+				'<S-r>',
+				function()
+					require('goto-preview').goto_preview_references()
+				end,
+			},
+			{
+				'<CR>',
+				function()
+					-- vim.notify.dismiss()
+					require('notify').dismiss()
+				end,
+			},
+			{
+				'k',
+				'<cmd>BufferLinePick<CR>',
+			},
+			{
+				'z',
+				function()
+					require('bufdelete').bufdelete(nil)
+				end,
+			},
+			{
+				'q',
+				function()
+					vim.api.nvim_buf_delete(0, {})
+				end,
+			},
+			{
+				'o',
+				-- function ()
+				-- 	require 'others-nvim'.
+				-- end
+				'<cmd>:Other<CR>',
+			},
+			{
+				'n',
+				function()
+					local attempt = require 'attempt'
+					attempt.new_select()
+				end,
+			},
+			{
+				'p',
+				'<cmd>Telescope neoclip<CR>',
+			},
+			{
+				'w',
+				{
+					{
+						'w',
+						'<cmd>winc w<CR>',
+					},
+					{
+						'h',
+						'<cmd>winc h<CR>',
+					},
+					{
+						'j',
+						'<cmd>winc j<CR>',
+					},
+					{
+						'k',
+						'<cmd>winc k<CR>',
+					},
+					{
+						'l',
+						'<cmd>winc l<CR>',
+					},
+					{
+						'p',
+						'<cmd>winc p<CR>',
+					},
+					{
+						'o',
+						'<cmd>winc o<CR>',
+					},
+					{
+						'x',
+						'<cmd>winc x<CR>',
+					},
+				},
 			},
 		},
 	},
@@ -215,6 +344,10 @@ nest.applyKeymaps {
 			{
 				's>',
 				'<cmd>w<CR>',
+			},
+			{
+				'/',
+				'',
 			},
 		},
 	},
@@ -379,6 +512,50 @@ nest.applyKeymaps {
 		'N',
 		'Nzz',
 	},
+	{
+		'8',
+		'10jzz',
+		mode = 'n',
+	},
+	{
+		'9',
+		'10kzz',
+		mode = 'n',
+	},
+	{
+		'8',
+		'10j',
+		mode = 'v',
+	},
+	{
+		'9',
+		'10k',
+		mode = 'v',
+	},
+	{
+		'Y',
+		'y$',
+	},
+	{
+		'<S-g>',
+		'Gzz',
+	},
+	{
+		'p',
+		'"0p',
+		mode = 'v',
+	},
+	{
+		'<S-p>',
+		'"0<S-p>',
+		mode = 'v',
+	},
+	{
+		'<Esc>',
+		function()
+			require('goto-preview').close_all_win()
+		end,
+	},
 }
 
 vim.keymap.set('c', '<C-f>', function()
@@ -436,7 +613,11 @@ vim.api.nvim_create_autocmd({
 -- 	silent = true,
 -- })
 vim.keymap.set('n', '<leader>s', 'yss)')
-
+-- vim.keymap.set('c', 'W', 'w')
+vim.cmd [[
+cnoreabbrev <expr> W getcmdtype() is# ':' && getcmdline() is# 'W' ? 'w' : 'W'
+cnoreabbrev <expr> Q getcmdtype() is# ':' && getcmdline() is# 'Q' ? 'q' : 'Q'
+]]
 -- leave terminal buffer with <Esc>
 -- then return to previous window
 -- vim.keymap.set('t', '<Esc>', '<C-\\><C-n>') --
@@ -449,6 +630,16 @@ vim.cmd [[cab b buffers
 
 cab f find
 " I don't use fuzzy-finders, but :find so this is huge for me!]]
+
+local readline = require 'readline'
+vim.keymap.set('!', '<C-a>', readline.beginning_of_line)
+vim.keymap.set('!', '<C-e>', readline.end_of_line)
+-- vim.keymap.set('!', '<C-w>', readline.unix_word_rubout)
+vim.keymap.set('!', '<C-k>', readline.kill_line)
+vim.keymap.set('!', '<C-u>', readline.backward_kill_line)
+vim.keymap.set('!', '<C-d>', '<Delete>')
+vim.keymap.set('!', '<C-f>', '<Right>')
+vim.keymap.set('!', '<C-b>', '<Left>')
 
 -- <F1> help
 -- <F2> vim-codepainter

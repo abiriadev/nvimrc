@@ -1,9 +1,17 @@
+local navic = require 'nvim-navic'
+
 require('lualine').setup {
 	options = {
 		icons_enabled = true,
 		theme = 'auto',
-		component_separators = { left = '', right = '' },
-		section_separators = { left = '', right = '' },
+		component_separators = {
+			left = '',
+			right = '',
+		},
+		section_separators = {
+			left = '',
+			right = '',
+		},
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -48,8 +56,14 @@ require('lualine').setup {
 				-- always_visible = false, -- Show diagnostics even if there are none.
 			},
 		},
-		lualine_c = { 'filename' },
-		lualine_x = { 'encoding', 'fileformat', 'filetype' },
+		lualine_c = {
+			'filename',
+		},
+		lualine_x = {
+			'encoding',
+			'fileformat',
+			'filetype',
+		},
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' },
 	},

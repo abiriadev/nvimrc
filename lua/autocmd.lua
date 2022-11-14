@@ -12,6 +12,7 @@ vim.cmd [[
 augroup packer_user_config
 autocmd!
 autocmd BufWritePost plugins/init.lua source <afile> | PackerCompile
+autocmd BufWritePost plugins/init.lua source <afile> | PackerInstall
 augroup end
 ]]
 
@@ -45,3 +46,8 @@ vim.cmd [[autocmd BufReadPost,FileReadPost * set spell]]
 --   end
 -- })
 ---ENDWORKAROUND
+
+-- disable spellcheck for vertain filetypes
+vim.cmd [[autocmd FileType alpha setlocal nospell]]
+
+vim.api.nvim_create_autocmd("VimLeavePre", { command = [[silent! FidgetClose]] })

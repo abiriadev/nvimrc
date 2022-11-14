@@ -6,8 +6,8 @@ telescope.setup {
 		mappings = {
 			i = {
 				['<esc>'] = 'close',
-				['<C-j>'] = 'move_selection_next',
-				['<C-k>'] = 'move_selection_previous',
+				['j'] = 'move_selection_next',
+				['k'] = 'move_selection_previous',
 				['<Space>'] = 'toggle_selection',
 				-- ['<C-@>'] = 'toggle_selection',
 			},
@@ -25,8 +25,11 @@ telescope.setup {
 		builtin = {
 			theme = 'ivy',
 		},
+		live_grep = {
+			theme = 'dropdown',
+		},
 		buffers = {
-			theme = 'ivy',
+			theme = 'dropdown',
 		},
 		command_history = {
 			theme = 'ivy',
@@ -43,6 +46,9 @@ telescope.setup {
 		keymaps = {
 			theme = 'dropdown',
 		},
+		lsp_references = {
+			theme = 'dropdown',
+		},
 	},
 	extensions = {
 		fzf = {
@@ -52,6 +58,12 @@ telescope.setup {
 			case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
 			-- the default case_mode is "smart_case"
 		},
+		harpoon = {
+			theme = 'dropdown',
+		},
+		neoclip = {
+			theme = 'cursor',
+		},
 	},
 }
 
@@ -59,4 +71,6 @@ telescope.load_extension 'fzf'
 telescope.load_extension 'zoxide'
 telescope.load_extension 'command_palette'
 telescope.load_extension 'harpoon'
+telescope.load_extension 'attempt'
+telescope.load_extension 'neoclip'
 -- .load_extension('projects')

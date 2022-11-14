@@ -13,5 +13,7 @@
 -- vim.opt.buftype = false	-- empty, "nofile", "nowrite", "quickfix", etc.: type of buffer
 -- vim.opt.buflisted = false	-- whether the buffer shows up in the buffer list
 -- vim.opt.debug = false	-- set to "msg" to see all error messages
--- vim.opt.signcolumn = false	-- whether to show the signcolumn
+
+-- prevent window from shaking when formatting code
+vim.opt.signcolumn = 'yes'	-- whether to show the signcolumn
 -- vim.opt.pyxversion = false	-- whether to use Python 2 or 3

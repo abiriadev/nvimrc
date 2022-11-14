@@ -15,12 +15,8 @@ if vim.g.neovide then
 	require 'gui.neovide'
 end
 
--- You can configure Neovim to automatically run :PackerCompile whenever plugins.lua is updated with an autocommand:
-
 vim.g.code_action_menu_show_details = false
 vim.g.code_action_menu_show_diff = false
 
--- vim.cmd [[syntax on]]
-vim.cmd [[let g:Illuminate_delay = 0]]
--- vim.cmd [[hi rainbowcol1 guifg=#123456]]
-
+vim.o.winbar =
+	"%{%v:lua.require'nvim-navic'.get_location()%}"

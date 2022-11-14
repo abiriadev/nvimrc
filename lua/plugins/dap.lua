@@ -1,5 +1,10 @@
 local dap = require 'dap'
 
+vim.fn.sign_define(
+	'DapBreakpoint',
+	{ text = '🛑', texthl = '', linehl = 'ErrorText', numhl = '' }
+)
+
 dap.adapters.node2 = {
 	type = 'executable',
 	command = 'node',

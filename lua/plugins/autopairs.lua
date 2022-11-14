@@ -2,7 +2,7 @@ local autopairs = require 'nvim-autopairs'
 local Rule = require 'nvim-autopairs.rule'
 local cond = require 'nvim-autopairs.conds'
 
-autopairs.setup()
+autopairs.setup { enable_check_bracket_line = false }
 
 -- autopairs.add_rules {
 -- 	Rule(' ', ' '):with_pair(function(opts)
@@ -35,12 +35,24 @@ autopairs.setup()
 -- 		:use_key ']',
 -- }
 
-autopairs.add_rule(
-	Rule('<', '>', '-html'):with_cr(cond.done):with_move(cond.done)
-)
-
-autopairs.add_rule(
-	Rule('=>$', ' {}', { 'typescript', 'typescriptreact', 'javascript' })
-		:use_regex(true)
-		:set_end_pair_length(1)
-)
+-- autopairs.add_rule(
+-- 	Rule('<', '>', '-html', '-jsx')
+-- 		:with_cr(cond.done)
+-- 		:with_move(cond.done)
+-- )
+--
+-- autopairs.add_rule(
+-- 	Rule(
+-- 		'=>$',
+-- 		' {}',
+-- 		{ 'typescript', 'typescriptreact', 'javascript' }
+-- 	):use_regex(true):set_end_pair_length(1)
+-- )
+--
+-- autopairs.add_rule(
+-- 	Rule(
+-- 		'/**',
+-- 		' */',
+-- 		{ 'typescript', 'typescriptreact', 'javascript' }
+-- 	):set_end_pair_length(1)
+-- )

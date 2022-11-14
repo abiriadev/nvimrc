@@ -13,8 +13,8 @@
 -- vim.opt.previewwindow = false	-- identifies the preview window
 -- vim.opt.hidden = false	-- don't unload a buffer when no longer shown in a window
 -- vim.opt.switchbuf = false	-- "useopen" and/or "split"; which window to use when jumping
--- vim.opt.splitbelow = false	-- a new window is put below the current one
--- vim.opt.splitright = false	-- a new window is put right of the current one
+vim.opt.splitbelow = true -- a new window is put below the current one
+vim.opt.splitright = true -- a new window is put right of the current one
 -- vim.opt.scrollbind = false	-- this window scrolls together with other bound windows
 -- vim.opt.scrollopt = false	-- "ver", "hor" and/or "jump"; list of options for 'scrollbind'
 -- vim.opt.cursorbind = false	-- this window's cursor moves together with other bound windows
