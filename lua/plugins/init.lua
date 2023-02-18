@@ -70,12 +70,7 @@ return require('packer').startup {
 					require('numb').setup()
 				end,
 			},
-			{
-				'sitiom/nvim-numbertoggle',
-				config = function()
-					require('numbertoggle').setup()
-				end,
-			},
+			{ 'sitiom/nvim-numbertoggle' },
 			{ 'notomo/cmdbuf.nvim' },
 			{
 				'andweeb/presence.nvim',
@@ -238,6 +233,7 @@ return require('packer').startup {
 				},
 			},
 			'NoahTheDuke/vim-just',
+			'katusk/vim-qkdb-syntax',
 			{
 				'IndianBoy42/tree-sitter-just',
 				disable = true,
@@ -245,6 +241,7 @@ return require('packer').startup {
 					require('tree-sitter-just').setup()
 				end,
 			},
+			'mechatroner/rainbow_csv',
 		}
 
 		-- LSP
@@ -253,12 +250,13 @@ return require('packer').startup {
 			{
 				'glepnir/lspsaga.nvim',
 				branch = 'main',
+				requires = {
+					{ 'nvim-tree/nvim-web-devicons' },
+					--Please make sure you install markdown and markdown_inline parser
+					{ 'nvim-treesitter/nvim-treesitter' },
+				},
 				config = function()
-					local saga = require 'lspsaga'
-
-					saga.init_lsp_saga {
-						-- your configuration
-					}
+					require('lspsaga').setup {}
 				end,
 			},
 			{

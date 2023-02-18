@@ -542,12 +542,12 @@ nest.applyKeymaps {
 	},
 	{
 		'p',
-		'"0p',
+		'pgvy',
 		mode = 'v',
 	},
 	{
 		'<S-p>',
-		'"0<S-p>',
+		'<S-p>gvy',
 		mode = 'v',
 	},
 	{

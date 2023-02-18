@@ -19,13 +19,17 @@ local commonFT = {
 	'javascriptreact',
 	'typescript',
 	'typescriptreact',
-	'markdown',
+	-- 'markdown',
 	'markdown.mdx',
 	'json',
+	'json5',
+	'jsonc',
 	'xml',
 	'svg',
 	'svelte',
-	'sql'
+	'sql',
+	'vue',
+	-- 'prisma',
 }
 
 for _, ft in ipairs(commonFT) do

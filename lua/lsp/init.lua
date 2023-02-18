@@ -8,7 +8,6 @@ local lspconfig = require 'lspconfig'
 local capabilities = getconf 'capabilities'
 local lsp_flags = getconf 'flags'
 local on_attach = getconf 'on_attach'
-local handlers = getconf 'handlers'
 
 vim.o.updatetime = 250
 
@@ -41,6 +40,11 @@ vim.diagnostic.config {
 }
 
 lspconfig['pyright'].setup {
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+}
+lspconfig['gopls'].setup {
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
@@ -100,4 +104,96 @@ lspconfig.jdtls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
+}
+lspconfig.awk_ls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+lspconfig.flux_lsp.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+lspconfig.volar.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+	-- 	init_options = {
+	-- 		typescript = {
+	-- 			tsdk = ''
+	-- /home/abiria/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript-language-server/lib/cli.js
+	-- 		}
+	-- 	}
+	-- filetypes = {
+	-- 	-- 'typescript',
+	-- 	-- 'javascript',
+	-- 	-- 'javascriptreact',
+	-- 	-- 'typescriptreact',
+	-- 	'vue',
+	-- 	-- 'json',
+	-- },
+}
+lspconfig.jsonls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+	filetypes = { 'json', 'jsonc' },
+	settings = {
+		json = {
+			-- Schemas https://www.schemastore.org
+			schemas = {
+				{
+					fileMatch = { 'package.json' },
+					url = 'https://json.schemastore.org/package.json',
+				},
+				{
+					fileMatch = { 'tsconfig*.json' },
+					url = 'https://json.schemastore.org/tsconfig.json',
+				},
+				{
+					fileMatch = {
+						'.prettierrc',
+						'.prettierrc.json',
+						'prettier.config.json',
+					},
+					url = 'https://json.schemastore.org/prettierrc.json',
+				},
+				{
+					fileMatch = {
+						'.eslintrc',
+						'.eslintrc.json',
+					},
+					url = 'https://json.schemastore.org/eslintrc.json',
+				},
+				{
+					fileMatch = {
+						'.babelrc',
+						'.babelrc.json',
+						'babel.config.json',
+					},
+					url = 'https://json.schemastore.org/babelrc.json',
+				},
+				{
+					fileMatch = { 'lerna.json' },
+					url = 'https://json.schemastore.org/lerna.json',
+				},
+				{
+					fileMatch = {
+						'now.json',
+						'vercel.json',
+					},
+					url = 'https://json.schemastore.org/now.json',
+				},
+				{
+					fileMatch = {
+						'.stylelintrc',
+						'.stylelintrc.json',
+						'stylelint.config.json',
+					},
+					url = 'http://json.schemastore.org/stylelintrc.json',
+				},
+			},
+		},
+	},
 }

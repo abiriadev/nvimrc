@@ -20,11 +20,17 @@ vim.g.neovide_cursor_vfx_particle_curl = 0
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.4
 vim.g.neovide_cursor_vfx_particle_phase = 0
 
-vim.cmd [[
-let g:neovide_scale_factor=1.0
-function! ChangeScaleFactor(delta)
-    let g:neovide_scale_factor = g:neovide_scale_factor * a:delta
-endfunction
-nnoremap <expr><C-=> ChangeScaleFactor(1.25)
-nnoremap <expr><C--> ChangeScaleFactor(1/1.25)
-]]
+vim.g.neovide_scale_factor = 1.0
+
+local function ChangeScaleFactor(delta)
+	vim.g.neovide_scale_factor = vim.g.neovide_scale_factor
+		* delta
+end
+
+vim.keymap.set('n', '<C-=>', function()
+	ChangeScaleFactor(1.25)
+end)
+
+vim.keymap.set('n', '<C-->', function()
+	ChangeScaleFactor(1 / 1.25)
+end)

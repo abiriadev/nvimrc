@@ -3,13 +3,14 @@ require 'impatient' --.enable_profile()
 require 'options'
 require 'plugins'
 require 'keymaps'
+require 'ft'
 require 'lsp'
 require 'color'
 require 'autocmd'
 
 if vim.g.neovide then
 	vim.opt.guifont =
-		[[JBcat Mono,Jetbrains Mono,MesloLGL Nerd Font Mono:h10]]
+		[[jbcat,Jetbrains Mono,MesloLGL Nerd Font Mono:h10]]
 	-- vim.opt.guifont = '*'
 
 	require 'gui.neovide'
