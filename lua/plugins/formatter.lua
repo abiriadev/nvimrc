@@ -19,7 +19,7 @@ local commonFT = {
 	'javascriptreact',
 	'typescript',
 	'typescriptreact',
-	-- 'markdown',
+	'markdown',
 	'markdown.mdx',
 	'json',
 	'json5',

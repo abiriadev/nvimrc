@@ -8,6 +8,9 @@ vim.filetype.add {
 
 		avsc = 'json',
 		har = 'json',
+
+		-- unity asset metadata file
+		meta = 'yaml',
 	},
 	filename = {
 		['.swcrc'] = 'json',

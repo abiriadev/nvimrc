@@ -17,12 +17,12 @@ augroup end
 
 vim.cmd [[autocmd User TelescopePreviewerLoaded setlocal wrap]]
 
-vim.cmd [[au BufWritePre /tmp/* setlocal noundofile]]
-vim.cmd [[autocmd BufReadPost,FileReadPost * normal zR]]
-vim.cmd [[autocmd BufReadPost,FileReadPost * set spell]]
+-- vim.cmd [[au BufWritePre /tmp/* setlocal noundofile]]
+-- vim.cmd [[autocmd BufReadPost,FileReadPost * normal zR]]
+-- vim.cmd [[autocmd BufReadPost,FileReadPost * set spell]]
 
 -- disable spellcheck for vertain filetypes
-vim.cmd [[autocmd FileType alpha setlocal nospell]]
+-- vim.cmd [[autocmd FileType alpha setlocal nospell]]
 
 vim.api.nvim_create_autocmd(
 	'VimLeavePre',
