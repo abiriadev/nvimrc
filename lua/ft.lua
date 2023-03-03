@@ -11,6 +11,9 @@ vim.filetype.add {
 
 		-- unity asset metadata file
 		meta = 'yaml',
+
+		-- unity WebGL
+		jslib = 'javascript',
 	},
 	filename = {
 		['.swcrc'] = 'json',

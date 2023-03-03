@@ -199,6 +199,8 @@ nest.applyKeymaps {
 
 					if vim.bo.filetype == 'NvimTree' then
 						return '<C-w>p'
+					elseif vim.bo.filetype == '' then
+						return '<cmd>NvimTreeOpen<CR>'
 					else
 						return '<cmd>NvimTreeFindFile<CR>'
 					end
