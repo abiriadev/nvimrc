@@ -1,6 +1,6 @@
 # Nvim Configs
 
-> **Warning**
+> **Warning** \
 > this is just a temporary repo. it might be deleted or archived later.
 
 ## Statistics:
