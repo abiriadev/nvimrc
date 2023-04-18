@@ -17,6 +17,6 @@
 -- vim.opt.autowrite = false	-- automatically write a file when leaving a modified buffer
 -- vim.opt.autowriteall = false	-- as 'autowrite', but works with more commands
 -- vim.opt.writeany = false	-- always write without asking for confirmation
--- vim.opt.autoread = false	-- automatically read a file when it was modified outside of Vim
+vim.opt.autoread = true -- automatically read a file when it was modified outside of Vim
 -- vim.opt.patchmode = false	-- keep oldest version of a file; specifies file name extension
 -- vim.opt.fsync = false	-- forcibly sync the file to disk after writing it

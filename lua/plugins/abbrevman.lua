@@ -7,7 +7,7 @@ abbrev_man.setup {
 		['nt_en'] = {
 			['adn'] = 'and',
 			['inhect'] = 'inject',
-			['nwe'] = 'new',
+			-- ['nwe'] = 'new',
 		},
 	},
 	programming_dictionaries = {

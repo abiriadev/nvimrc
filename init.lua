@@ -1,9 +1,9 @@
 require 'impatient' --.enable_profile()
 
+require 'ft'
 require 'options'
 require 'plugins'
 require 'keymaps'
-require 'ft'
 require 'lsp'
 require 'color'
 require 'autocmd'

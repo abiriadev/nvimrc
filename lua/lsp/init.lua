@@ -216,3 +216,18 @@ lspconfig.jsonls.setup {
 		},
 	},
 }
+lspconfig.omnisharp.setup {
+	cmd = { 'omnisharp' },
+
+	-- Enables support for showing unimported types and unimported extension
+	-- methods in completion lists. When committed, the appropriate using
+	-- directive will be added at the top of the current file. This option can
+	-- have a negative impact on initial completion responsiveness,
+	-- particularly for the first few completion sessions after opening a
+	-- solution.
+	enable_import_completion = true,
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+	single_file_support = true,
+}

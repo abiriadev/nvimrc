@@ -48,6 +48,7 @@ return require('packer').startup {
 			{ 'famiu/bufdelete.nvim' },
 			{
 				'Pocco81/AbbrevMan.nvim',
+				disable = true,
 				config = getconf 'abbrevman',
 			},
 			{ 'linty-org/readline.nvim' },
@@ -64,6 +65,9 @@ return require('packer').startup {
 				end,
 			},
 			{ 'antoinemadec/FixCursorHold.nvim' },
+			{
+				'https://github.com/vim-scripts/AnsiEsc.vim',
+			},
 			{
 				'nacro90/numb.nvim',
 				config = function()
@@ -149,7 +153,6 @@ return require('packer').startup {
 				'chentoast/marks.nvim',
 				config = getconf 'marks',
 			},
-			{ 'djoshea/vim-autoread' },
 			{
 				'petertriho/nvim-scrollbar',
 				config = function()
@@ -232,13 +235,16 @@ return require('packer').startup {
 					'nvim-telescope/telescope.nvim', -- optional
 				},
 			},
-			'NoahTheDuke/vim-just',
+			-- 'NoahTheDuke/vim-just',
 			'katusk/vim-qkdb-syntax',
 			{
-				'IndianBoy42/tree-sitter-just',
-				disable = true,
+				-- 'IndianBoy42/tree-sitter-just',
+				'/home/abiria/.config/nvim/lua/tree-sitter-just',
+				-- disable = true,
 				config = function()
-					require('tree-sitter-just').setup()
+					require('tree-sitter-just').setup {
+						['local'] = nil,
+					}
 				end,
 			},
 			'mechatroner/rainbow_csv',
@@ -351,12 +357,13 @@ return require('packer').startup {
 		use {
 			{
 				'nvim-treesitter/nvim-treesitter',
-				branch = 'v0.8.0',
+				-- branch = 'v0.8.0',
 				config = getconf 'treesitter',
 				run = function()
-					require('nvim-treesitter.install').update {
-						with_sync = true,
-					}
+					local ts_update = require(
+						'nvim-treesitter.install'
+					).update { with_sync = true }
+					ts_update()
 				end,
 			},
 			{ 'windwp/nvim-ts-autotag' },
@@ -373,6 +380,7 @@ return require('packer').startup {
 			},
 			{
 				'nvim-treesitter/playground',
+				disable = true,
 				requires = {
 					'nvim-treesitter/nvim-treesitter',
 				},
@@ -636,6 +644,26 @@ return require('packer').startup {
 					show_end_of_line = true,
 				}
 			end,
+		}
+		use {
+			'nmac427/guess-indent.nvim',
+			config = function()
+				require('guess-indent').setup {
+					filetype_exclude = { -- A list of filetypes for which the auto command gets disabled
+						'netrw',
+						'tutor',
+					},
+					buftype_exclude = { -- A list of buffer types for which the auto command gets disabled
+						'help',
+						'nofile',
+						'terminal',
+						'prompt',
+					},
+				}
+			end,
+		}
+		use {
+			'mg979/vim-visual-multi',
 		}
 		use {
 			'numToStr/Comment.nvim',

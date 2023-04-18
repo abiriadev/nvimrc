@@ -73,7 +73,15 @@ formatterConfig['yaml'] = {
 }
 
 formatterConfig.rust = {
-	require('formatter.filetypes.rust').rustfmt,
+	-- require('formatter.filetypes.rust').rustfmt,
+
+	function()
+		return {
+			exe = 'rustfmt',
+			args = { '+nightly', '--edition 2021' },
+			stdin = true,
+		}
+	end,
 }
 
 formatterConfig.c = {

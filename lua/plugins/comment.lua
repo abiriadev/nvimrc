@@ -61,3 +61,7 @@ map('x', 'g<', function()
 	vim.api.nvim_feedkeys(esc, 'nx', false)
 	api.locked 'uncomment.linewise'(vim.fn.visualmode())
 end, { desc = 'Uncomment region linewise (visual)' })
+
+local ft = require 'Comment.ft'
+
+ft.just = '# %s'
