@@ -1,5 +1,7 @@
-local g =
-	vim.api.nvim_create_augroup 'remove_o_from_formatoptions'
+local g = vim.api.nvim_create_augroup(
+	'remove_o_from_formatoptions',
+	{}
+)
 vim.api.nvim_create_autocmd('FileType', {
 	desc = [[temporary solution: prevent inserting comments when pressing o, <S-o>.]],
 	group = g,
