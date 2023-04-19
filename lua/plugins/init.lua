@@ -311,31 +311,32 @@ return require('packer').startup {
 		use {
 			{ 'kyazdani42/nvim-web-devicons' },
 			{
-				'kyazdani42/nvim-tree.lua',
+				'nvim-tree/nvim-tree.lua',
 				requires = {
-					'kyazdani42/nvim-web-devicons', -- optional, for file icons
+					'nvim-tree/nvim-web-devicons', -- optional, for file icons
 				},
 				-- tag = 'nightly', -- optional, updated every week. (see issue #1193)
 				branch = 'master',
+				-- commit = '5aa318c15934efa03d2ac86b493e89792e06c7b6',
 				config = getconf 'nvim-tree',
 			},
 			{
 				'akinsho/bufferline.nvim',
 				tag = 'v2.*',
-				requires = 'kyazdani42/nvim-web-devicons',
+				requires = 'nvim-tree/nvim-web-devicons',
 				config = getconf 'bufferline',
 			},
 			{
 				'goolord/alpha-nvim',
 				requires = {
-					'kyazdani42/nvim-web-devicons',
+					'nvim-tree/nvim-web-devicons',
 				},
 				config = getconf 'alpha-nvim',
 			},
 			{
 				'nvim-lualine/lualine.nvim',
 				requires = {
-					'kyazdani42/nvim-web-devicons',
+					'nvim-tree/nvim-web-devicons',
 					-- opt = true,
 				},
 				config = getconf 'lualine',
@@ -450,7 +451,7 @@ return require('packer').startup {
 						opt = true,
 					},
 					{
-						'kyazdani42/nvim-web-devicons',
+						'nvim-tree/nvim-web-devicons',
 						opt = true,
 					},
 				},
@@ -551,7 +552,7 @@ return require('packer').startup {
 		-- etc
 		use {
 			'folke/trouble.nvim',
-			requires = 'kyazdani42/nvim-web-devicons',
+			requires = 'nvim-tree/nvim-web-devicons',
 			config = function()
 				require('trouble').setup {}
 			end,

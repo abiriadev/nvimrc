@@ -182,7 +182,7 @@ local function on_attach(bufnr)
 		opts 'Expand All'
 	)
 	vim.keymap.set(
-		'n',use "rafamadriz/neon"
+		'n',
 		'e',
 		api.fs.rename_basename,
 		opts 'Rename: Basename'
