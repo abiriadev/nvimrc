@@ -30,7 +30,7 @@ return require('presence'):setup {
 	buttons = {
 		{
 			label = 'Welcome to Coding Lab!',
-			url = 'https://discord.gg/b4Twg7GG',
+			url = 'https://discord.gg/uas7uMZ4wC',
 		},
 	},
 

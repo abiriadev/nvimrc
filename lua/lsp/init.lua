@@ -225,9 +225,15 @@ lspconfig.omnisharp.setup {
 	-- have a negative impact on initial completion responsiveness,
 	-- particularly for the first few completion sessions after opening a
 	-- solution.
+
 	enable_import_completion = true,
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
 	single_file_support = true,
+}
+lspconfig.bashls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
 }

@@ -41,7 +41,7 @@ local source_mapping = {
 
 local tabnine = require 'cmp_tabnine.config'
 
-tabnine.setup {
+tabnine:setup {
 	max_lines = 100,
 	max_num_results = 10,
 	sort = true,
@@ -61,13 +61,18 @@ cmp.setup {
 			before = function(entry, vim_item)
 				-- vim_item.kind = lspkind.presets.default[vim_item.kind]
 
-				local menu = source_mapping[entry.source.name]
+				local menu =
+					source_mapping[entry.source.name]
 				if entry.source.name == 'cmp_tabnine' then
 					if
-						entry.completion_item.data ~= nil
-						and entry.completion_item.data.detail ~= nil
+						entry.completion_item.data
+							~= nil
+						and entry.completion_item.data.detail
+							~= nil
 					then
-						menu = entry.completion_item.data.detail .. ' ' .. menu
+						menu = entry.completion_item.data.detail
+							.. ' '
+							.. menu
 					end
 					vim_item.kind = ' tabnine'
 				end

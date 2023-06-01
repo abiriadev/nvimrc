@@ -36,5 +36,6 @@ vim.filetype.add {
 		['.justfile'] = 'just',
 
 		['a.log'] = 'logtalk',
+		['Editor.log'] = 'c',
 	},
 }

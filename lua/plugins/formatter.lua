@@ -116,9 +116,23 @@ formatterConfig['prisma'] = {
 		}
 	end,
 }
--- formatterConfig.c = {
--- 	require('formatter.filetypes.clangformat').stylua,
--- }
+
+formatterConfig['fish'] = {
+	defaults.fishindent,
+}
+
+formatterConfig['cs'] = {
+	function()
+		return {
+			exe = 'dotnet-csharpier',
+			stdin = true,
+		}
+	end,
+}
+
+formatterConfig['tex'] = {
+	defaults.latexindent,
+}
 
 require('formatter').setup {
 	-- Enable or disable logging
