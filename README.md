@@ -1,7 +1,8 @@
 # Nvim Configs
 
 > **Warning** \
-> this is just a temporary repo. it might be deleted or archived later.
+> this is just a temporary repo. it might be deleted or archived
+> later.
 
 ## Statistics:
 
@@ -9,10 +10,11 @@
 ===============================================================================
  Language            Files        Lines         Code     Comments       Blanks
 ===============================================================================
- Lua                    82         4785         3563         1019          203
- Markdown                1            7            0            4            3
+ Lua                    82         4891         3665         1018          208
+ Markdown                1           18            0           15            3
  TOML                    1            6            3            3            0
+ Shell                   1            2            1            1            0
 ===============================================================================
- Total                  84         4798         3566         1026          206
+ Total                  85         4917         3669         1037          211
 ===============================================================================
 ```
