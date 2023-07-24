@@ -6,8 +6,9 @@
 
 ## Statistics:
 
-<!-- AUTO-GENERATED-CONTENT:START (FILE:src=./.stat.txt) -->
-<!-- The below content is automatically added from ./.stat.txt -->
+<!-- AUTO-GENERATED-CONTENT:START (CODE:src=./.stat.txt) -->
+<!-- The below code snippet is automatically added from ./.stat.txt -->
+```txt
 ===============================================================================
  Language            Files        Lines         Code     Comments       Blanks
 ===============================================================================
@@ -18,4 +19,5 @@
 ===============================================================================
  Total                  87         5301         3842         1232          227
 ===============================================================================
+```
 <!-- AUTO-GENERATED-CONTENT:END -->
