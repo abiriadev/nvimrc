@@ -84,7 +84,7 @@ formatterConfig.rust = {
 	end,
 }
 
-formatterConfig.c = {
+local c = {
 	function()
 		return {
 			exe = 'clang-format',
@@ -100,6 +100,9 @@ formatterConfig.c = {
 		}
 	end,
 }
+
+formatterConfig.c = c
+formatterConfig.cpp = c
 
 formatterConfig['prisma'] = {
 	function()

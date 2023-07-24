@@ -123,6 +123,7 @@ lspconfig.jdtls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,
+	cmd = { 'jdtls' },
 }
 lspconfig.awk_ls.setup {
 	capabilities = capabilities,
@@ -233,6 +234,38 @@ lspconfig.omnisharp.setup {
 	single_file_support = true,
 }
 lspconfig.bashls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+lspconfig.groovyls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+	cmd = { 'groovy-language-server' },
+	root_dir = function(fname)
+		for _, patterns in ipairs {
+			-- Single-module projects
+			{
+				'build.xml', -- Ant
+				'pom.xml', -- Maven
+				'settings.gradle', -- Gradle
+				'settings.gradle.kts', -- Gradle
+			},
+			-- Multi-module projects
+			{ 'build.gradle', 'build.gradle.kts' },
+		} do
+			local root =
+				require('lspconfig.util').root_pattern(
+					unpack(patterns)
+				)(fname)
+			if root then
+				return root
+			end
+		end
+	end,
+}
+lspconfig.gradle_ls.setup {
 	capabilities = capabilities,
 	on_attach = on_attach,
 	flags = lsp_flags,

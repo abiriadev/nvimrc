@@ -5,6 +5,7 @@ vim.filetype.add {
 
 		-- allow comments
 		json = 'jsonc',
+		prettierrc = 'json',
 
 		avsc = 'json',
 		har = 'json',
@@ -25,6 +26,9 @@ vim.filetype.add {
 		-- justfile
 		justfile = 'just',
 		just = 'just',
+
+		s = 'asm',
+		S = 'asm',
 	},
 	filename = {
 		['.swcrc'] = 'json',
@@ -37,5 +41,6 @@ vim.filetype.add {
 
 		['a.log'] = 'logtalk',
 		['Editor.log'] = 'c',
+		['lsp.log'] = 'logtalk',
 	},
 }

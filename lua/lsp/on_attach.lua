@@ -29,6 +29,13 @@ return function(client, bufnr)
 		{ silent = true }
 	)
 
+	vim.keymap.set('n', '<leader>k', function()
+		vim.diagnostic.goto_prev()
+	end, { noremap = true, silent = true })
+	vim.keymap.set('n', '<leader>j', function()
+		vim.diagnostic.goto_next()
+	end, { noremap = true, silent = true })
+
 	vim.api.nvim_create_autocmd('CursorHold', {
 		buffer = bufnr,
 		callback = function()

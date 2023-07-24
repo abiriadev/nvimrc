@@ -107,6 +107,7 @@ return require('packer').startup {
 			},
 			{
 				'j-hui/fidget.nvim',
+				tag = 'legacy',
 				config = function()
 					require('fidget').setup {}
 				end,
@@ -135,6 +136,7 @@ return require('packer').startup {
 			},
 			{
 				'gbprod/stay-in-place.nvim',
+				disable = true,
 				config = function()
 					require('stay-in-place').setup {}
 				end,
@@ -220,6 +222,7 @@ return require('packer').startup {
 				requires = { 'nvim-treesitter' }, -- or require if not used so far
 				after = { 'nvim-cmp' }, -- if a completion plugin is using tabs load it before
 			},
+			'gpanders/editorconfig.nvim',
 		}
 
 		-- individual language support
@@ -247,7 +250,8 @@ return require('packer').startup {
 					}
 				end,
 			},
-			'mechatroner/rainbow_csv',
+			-- 'mechatroner/rainbow_csv',
+			use 'mfussenegger/nvim-jdtls',
 		}
 
 		-- LSP
@@ -597,6 +601,7 @@ return require('packer').startup {
 		use {
 			'mhartington/formatter.nvim',
 			config = getconf 'formatter',
+			-- commit = '182740a',
 		}
 		use 'LionC/nest.nvim'
 		use {
@@ -680,6 +685,7 @@ return require('packer').startup {
 				}
 			end,
 		}
+		-- use 'fmoralesc/nvimfs'
 		-- @
 
 		-- plugins for nvim nightly only

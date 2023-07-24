@@ -1,5 +1,6 @@
 local lib = require 'nvim-tree.lib'
 
+-- open as vsplit on current node
 local git_add = function()
 	local node = lib.get_node_at_cursor()
 	local gs = node.git_status
@@ -53,6 +54,14 @@ local function on_attach(bufnr)
 			nowait = true,
 		}
 	end
+
+	-- on_attach
+	vim.keymap.set(
+		'n',
+		'l',
+		api.node.open.edit,
+		opts 'Edit Or Open'
+	)
 
 	-- Default mappings. Feel free to modify or remove as you wish.
 	--
@@ -280,18 +289,18 @@ local function on_attach(bufnr)
 		api.tree.reload,
 		opts 'Refresh'
 	)
-	vim.keymap.set(
-		'n',
-		's',
-		api.node.run.system,
-		opts 'Run System'
-	)
-	vim.keymap.set(
-		'n',
-		'S',
-		api.tree.search_node,
-		opts 'Search'
-	)
+	-- vim.keymap.set(
+	-- 	'n',
+	-- 	's',
+	-- 	api.node.run.system,
+	-- 	opts 'Run System'
+	-- )
+	-- vim.keymap.set(
+	-- 	'n',
+	-- 	'S',
+	-- 	api.tree.search_node,
+	-- 	opts 'Search'
+	-- )
 	vim.keymap.set(
 		'n',
 		'U',
@@ -346,4 +355,51 @@ require('nvim-tree').setup {
 		ignore = false,
 	},
 	on_attach = on_attach,
+	filters = {
+		custom = {
+			'^.git$',
+		},
+	},
+	actions = {
+		open_file = {
+			resize_window = false,
+		},
+	},
 }
+
+vim.api.nvim_create_autocmd('QuitPre', {
+	callback = function()
+		local tree_wins = {}
+		local floating_wins = {}
+		local wins = vim.api.nvim_list_wins()
+		for _, w in ipairs(wins) do
+			local bufname = vim.api.nvim_buf_get_name(
+				vim.api.nvim_win_get_buf(w)
+			)
+			if bufname:match 'NvimTree_' ~= nil then
+				table.insert(tree_wins, w)
+			end
+			if
+				vim.api.nvim_win_get_config(w).relative
+				~= ''
+			then
+				table.insert(floating_wins, w)
+			end
+		end
+		if 1 == #wins - #floating_wins - #tree_wins then
+			-- Should quit, so we close all invalid windows.
+			for _, w in ipairs(tree_wins) do
+				vim.api.nvim_win_close(w, true)
+			end
+		end
+	end,
+})
+
+local api = require 'nvim-tree.api'
+
+api.events.subscribe(
+	api.events.Event.FileCreated,
+	function(file)
+		vim.cmd('edit ' .. file.fname)
+	end
+)
