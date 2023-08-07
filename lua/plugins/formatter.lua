@@ -137,6 +137,22 @@ formatterConfig['tex'] = {
 	defaults.latexindent,
 }
 
+formatterConfig['fennel'] = {
+	function()
+		return {
+			exe = 'fnlfmt',
+			args = {
+				util.get_current_buffer_file_path(),
+			},
+			stdin = true,
+		}
+	end,
+}
+
+formatterConfig['cmake'] = {
+	require('formatter.filetypes.cmake').cmakeformat,
+}
+
 require('formatter').setup {
 	-- Enable or disable logging
 	logging = true,

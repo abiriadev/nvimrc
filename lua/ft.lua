@@ -29,6 +29,11 @@ vim.filetype.add {
 
 		s = 'asm',
 		S = 'asm',
+
+		-- WARN: this is not a standard
+		ebnf = 'ebnf',
+
+		pgpass = 'pgpass',
 	},
 	filename = {
 		['.swcrc'] = 'json',

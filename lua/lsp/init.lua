@@ -270,3 +270,18 @@ lspconfig.gradle_ls.setup {
 	on_attach = on_attach,
 	flags = lsp_flags,
 }
+lspconfig.fennel_language_server.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+lspconfig.cmake.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+lspconfig.antlersls.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
